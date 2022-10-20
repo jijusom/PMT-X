@@ -71,8 +71,7 @@ const Login = (props: Props) => {
           <div className={styles.buttonWrapper} style={runawayStyle}>
             <button onMouseOver={handleButton}> Login </button>
           </div>
-          {/* <button onClick={() => setRunawayFlag(!runawayFlag)}>flag</button>
-          <button onClick={() => setRunawayPos(!runawayPos)}>position</button> */}
+          
         </div>
       </div>
     </div>
