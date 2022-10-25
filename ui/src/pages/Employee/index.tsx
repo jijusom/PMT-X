@@ -4,7 +4,7 @@ import { Collapse } from 'antd';
 import classes from "./index.jss";
 import "./index.css";
 import { Tabs } from "antd";
-import AddForm from "../../components/Add Form";
+import AddForm from "../../components/AddForm";
 import EmpTaskCard from "../../components/EmpTaskCard";
 
 type Props = {};

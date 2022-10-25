@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import classes from "./Login.jss";
+import {useNavigate} from 'react-router-dom'
 
 type Props = {};
 
 const Login = (props: Props) => {
+  const navigate = useNavigate();
   const [runawayFlag, setRunawayFlag] = useState(false);
   const [loginForm, setLoginForm] = useState({ username: "", password: "" });
   const [loginErrors, setLoginErrors] = useState({
@@ -69,7 +71,7 @@ const Login = (props: Props) => {
           />
           <span className="errorMsg">{loginErrors.password}</span>
           <div className={styles.buttonWrapper} style={runawayStyle}>
-            <button onMouseOver={handleButton}> Login </button>
+            <button onMouseOver={handleButton} onClick={() => navigate('/employee')}> Login </button>
           </div>
           
         </div>
