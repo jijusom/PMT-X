@@ -39,6 +39,7 @@ const classes = createUseStyles({
     borderRadius: '5px',
     '&:hover': {
       backgroundColor: 'rgba(211,69,91,1)',
+      cursor: 'pointer'
     }
   },
   main:{
