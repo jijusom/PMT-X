@@ -2,11 +2,11 @@ import React from "react";
 import classes from "./index.jss";
 
 type Props = {
-  showAddForm: boolean,
-  setShowAddForm: (a: boolean) => void
+  showAddForm: boolean;
+  setShowAddForm: (a: boolean) => void;
 };
 
-const EmpInfoCard = ({showAddForm, setShowAddForm}: Props) => {
+const EmpInfoCard = ({ showAddForm, setShowAddForm }: Props) => {
   const styles = classes();
   return (
     <div className={styles.card}>
@@ -25,7 +25,12 @@ const EmpInfoCard = ({showAddForm, setShowAddForm}: Props) => {
           <p>Your Performance</p>
         </div>
         <div className={styles.addTask}>
-          <button className={styles.addTaskBtn} onClick={() => setShowAddForm(!showAddForm)}>Add Task</button>
+          <button
+            className={styles.addTaskBtn}
+            onClick={() => setShowAddForm(!showAddForm)}
+          >
+            Add Task
+          </button>
         </div>
       </div>
     </div>
