@@ -117,7 +117,7 @@ const Employee = (props: Props) => {
       </div>
       {showAddForm ? (
         <div className={styles.form}>
-          <AddForm />
+          <AddForm showAddForm={showAddForm} setShowAddForm={setShowAddForm}/>
         </div>
       ) : (
         <></>

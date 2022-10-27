@@ -12,6 +12,15 @@ type Props = {
   };
 };
 
+// type Props = {
+//   employeeData: {
+//     employeeId: number,
+//     employeeName: string,
+//     completedTasks: string,
+//     pendingTasks: string
+//   }
+// }
+
 export default function ECardBack({ employeeData }: Props) {
   const styles = classes();
   return (
@@ -31,13 +40,13 @@ export default function ECardBack({ employeeData }: Props) {
             <p id="txt">In Progress</p>
           </div>
         </div>
-        <div className="performance">
+        <div>
           <progress
-            className={styles["progress-bar"]}
             value={employeeData.completed}
             max={employeeData.total}
           ></progress>
-          Performance
+          <span className={styles.progressvalue}>{employeeData.completed}%</span>
+          <p>Performance</p>
         </div>
       </div>
     </>

@@ -20,14 +20,14 @@ const EmpInfoCard = ({ showAddForm, setShowAddForm }: Props) => {
           />
           <p>Hi, Employee</p>
         </div>
-        <div className={styles.perfomance}>
-          <progress id="performance" value={32} max={100} />
+        <div className={styles.performance}>
+          <progress value={32} max={100} /><span className={styles.progressvalue}>32%</span>
           <p>Your Performance</p>
         </div>
         <div className={styles.addTask}>
           <button
             className={styles.addTaskBtn}
-            onClick={() => setShowAddForm(!showAddForm)}
+            onClick={() => setShowAddForm(true)}
           >
             Add Task
           </button>

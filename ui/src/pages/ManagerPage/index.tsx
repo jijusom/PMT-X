@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import ECardBack from "./ECardBack/ECardBack";
 import ECardFront from "./ECardFront/ECardFront";
-import classes from "./sample.jss";
+import classes from "./index.jss";
+import { useEffect } from "react";
+import axios from "axios";
+
+// type ITeamMember = {
+//   employeeId: number;
+//   employeeName: string;
+//   completedTasks: number;
+//   pendingTasks: number;
+// };
 
 const dummyData = [
   {
@@ -54,6 +63,23 @@ const dummyData = [
 export default function ManagerPage() {
   const styles = classes();
 
+  // const [teamData, setTeamData] = useState<ITeamMember[]>([]);
+
+  // const getTeamData =()=>{
+  //   axios.get(`${process.env.REACT_APP_API_URL}/${sessionStorage.getItem(id)}`)
+  //   .then((response)=>{
+  //     console.log(response);
+  //     setTeamData(response.data)
+  //   })
+  //   .catch((error)=>{
+  //     console.log(error);
+  //   })
+  // }
+
+  // useEffect(() => {
+  //   getTeamData();
+  // },[]);
+
   return (
     <div>
       <div className={styles.container}>
@@ -85,6 +111,17 @@ export default function ManagerPage() {
           </div>
         </div>
         <div className={styles.employeeCardContainer}>
+          {/* {teamData? teamData?.map((item, index: number)=>(
+            <div key={item.employeeId} className={styles["flip-card"]}>
+              <div className={styles["flip-card-inner"]}>
+                <ECardFront employeeData={item}={item}/>
+              </div>
+              <div className={styles["flip-card-back"]}>
+                  <ECardBack employeeData={item} />
+                </div>
+            </div>
+          ))} */}
+
           {dummyData.map((item, index: number) => (
             <div key={item.employeeId} className={styles["flip-card"]}>
               <div className={styles["flip-card-inner"]}>

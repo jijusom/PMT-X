@@ -29,10 +29,12 @@ const classes = createUseStyles({
     width: '100%',
     backgroundColor: primary,
     borderRadius: '4px',
-
+    height: '4em',
+    color: light,
   },
   desc: {
     textAlign: 'left',
+    fontStyle: 'italic'
   },
 
 });

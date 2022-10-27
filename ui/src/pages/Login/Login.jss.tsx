@@ -91,6 +91,9 @@ const classes = createUseStyles({
     height: "41px",
     display: "flex",
     transform: "0.3s ease-out",
+    '& button': {
+      padding: '0'
+    }
   },
   runButton: {
     transition: "0.4s",

@@ -1,7 +1,5 @@
 import { createUseStyles } from "react-jss";
-import { blueBird } from "../../../theme";
 
-const { light, primary, muted, secondary } = blueBird;
 const classes = createUseStyles({
   flex1: {
     height: "100%",
@@ -17,9 +15,9 @@ const classes = createUseStyles({
     "& #num": { fontSize: "40px", margin: "0" },
     "& #txt": { margin: "0" },
   },
-  "progress-bar": {
-    width: "200px",
-    height: "27px",
+  progressvalue: {
+    verticalAlign: "text-bottom",
+    marginLeft: "0.5em",
   },
 });
 

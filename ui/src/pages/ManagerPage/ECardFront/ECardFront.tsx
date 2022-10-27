@@ -12,6 +12,15 @@ type Props = {
   };
 };
 
+// type Props = {
+//   employeeData: {
+//     employeeId: number,
+//     employeeName: string,
+//     completedTasks: string,
+//     pendingTasks: string
+//   }
+// }
+
 export default function ECardFront({ employeeData }: Props) {
   const styles = classes();
   return (

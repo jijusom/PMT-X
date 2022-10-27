@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import classes from "./Login.jss";
-import {useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom';
+import axios from 'axios';
 
 type Props = {};
 
 const Login = (props: Props) => {
   const navigate = useNavigate();
   const [runawayFlag, setRunawayFlag] = useState(false);
-  const [loginForm, setLoginForm] = useState({ username: "", password: "" });
+  const [loginForm, setLoginForm] = useState({ email: "", password: "" });
   const [loginErrors, setLoginErrors] = useState({
-    username: "",
+    email: "",
     password: "",
   });
   const [runawayPos, setRunawayPos] = useState(true);
@@ -22,8 +23,25 @@ const Login = (props: Props) => {
       : "center",
   };
 
+const getUser=()=>{
+  axios.post(`${process.env.REACT_APP_API_URL}/signin`, loginForm)
+  .then((response)=>{
+      console.log(response);
+      // sessionStorage.setItem('token', response.data)
+      // if(response.data.role === 'employee'){
+      //   navigate('/employee')
+      // }
+      // else{
+      //   navigate('/manager')
+      // }
+  })
+  .catch((error)=>{
+    console.log(error)
+  })
+}
+
   useEffect(() => {
-    if( loginErrors.username === '' && loginErrors.password === ''){
+    if( loginErrors.email === '' && loginErrors.password === ''){
       setRunawayFlag(false);
     } else{
       setRunawayFlag(true);
@@ -31,7 +49,7 @@ const Login = (props: Props) => {
   }, [loginErrors]);
 
   useEffect(() => {
-    if( loginForm.username === '' || loginForm.password === ''){
+    if( loginForm.email === '' || loginForm.password === ''){
       setRunawayFlag(true);
     } else{
       setRunawayFlag(false);
@@ -54,14 +72,14 @@ const Login = (props: Props) => {
           <p className={styles.logo}>PMT-X</p>
         </div>
         <div className={styles.form}>
-          <label htmlFor="username">Username: </label>
+          <label htmlFor="email">email: </label>
           <input
             type="text"
-            id="username"
-            placeholder="Enter your Username"
+            id="email"
+            placeholder="Enter your email"
             onChange={handleChange}
           />
-          <span className="errorMsg">{loginErrors.username}</span>
+          <span className="errorMsg">{loginErrors.email}</span>
           <label htmlFor="password">Password:</label>
           <input
             type="password"
@@ -71,7 +89,7 @@ const Login = (props: Props) => {
           />
           <span className="errorMsg">{loginErrors.password}</span>
           <div className={styles.buttonWrapper} style={runawayStyle}>
-            <button onMouseOver={handleButton} onClick={() => navigate('/employee')}> Login </button>
+            <button onMouseOver={handleButton} onClick={getUser}> Login </button>
           </div>
           
         </div>
